@@ -1,6 +1,4 @@
 library(ggplot2)
-# Avoid overlapping labels
-library(ggrepel)
 
 
 # Function to save a ggplot.
@@ -11,7 +9,7 @@ library(ggrepel)
 #
 savePlot <- function(myPlot, name = "untitled.png") {
         print(myPlot)
-        ggsave(name)
+        ggsave(name, width = 10.0, height = 5.0)
         dev.off()
 }
 
