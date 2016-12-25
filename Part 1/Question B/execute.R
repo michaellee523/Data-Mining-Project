@@ -92,6 +92,15 @@ odorPlot <- ggplot(mushroom, aes(x = odor, fill = class)) +
         ylab("Total Count") +
         scale_fill_manual(values=c("green3", "red3"), name="Mushroom Class") 
 
+mushroom.none <- mushroom[mushroom$odor == "None", ]
+
+mushroomWithNoOdor <- ggplot(mushroom.none, aes(x = cap.shape, fill = class)) + 
+        geom_bar(width = 0.5) +
+        facet_wrap(~habitat + bruises) +
+        xlab("Cap Shape") + 
+        ylab("Total Count") +
+        scale_fill_manual(values = c("green3", "red3")) +
+        theme(axis.text.x = element_text(angle = 90, hjust = 1))
 
 #output the plots
 savePlot(capShapePlot, "cap shape.png")
@@ -102,3 +111,4 @@ savePlot(habitatPlot, "habitat.png")
 savePlot(populationPlot, "population.png")
 savePlot(sporePrintColorPlot, "spore print color.png")
 savePlot(odorPlot, "odor.png")
+savePlot(mushroomWithNoOdor, "mushroom with no odor.png")
