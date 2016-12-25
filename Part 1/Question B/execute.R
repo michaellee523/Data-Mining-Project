@@ -99,28 +99,28 @@ habitatPlot <- ggplot(mushroom, aes(x = habitat, fill = class)) +
         ylab("Total Count") +
         scale_fill_manual(values = c("green3", "red3"), name = "Mushroom Class") 
 
-# 5. A barchart to show the distribution of mushrooms by population and their respective edibility.
+# 6. A barchart to show the distribution of mushrooms by population and their respective edibility.
 populationPlot <- ggplot(mushroom, aes(x = population, fill = class)) +
         geom_bar(position = "dodge", width = 0.5) +
         xlab("Population") +
         ylab("Total Count") +
         scale_fill_manual(values = c("green3", "red3"), name = "Mushroom Class") 
 
-# 6. A barchart to show the distribution of mushrooms by spore.print.color and their respective edibility.
+# 7. A barchart to show the distribution of mushrooms by spore.print.color and their respective edibility.
 sporePrintColorPlot <- ggplot(mushroom, aes(x = spore.print.color, fill = class)) +
         geom_bar(position = "dodge", width = 0.5) +
         xlab("Spore Print Color") +
         ylab("Total Count") +
         scale_fill_manual(values = c("green3", "red3"), name = "Mushroom Class") 
 
-# 7. A barchart to show the distribution of mushrooms by odor and their respective edibility.
+# 8. A barchart to show the distribution of mushrooms by odor and their respective edibility.
 odorPlot <- ggplot(mushroom, aes(x = odor, fill = class)) +
         geom_bar(position = "dodge", width = 0.5) +
         xlab("Odor") +
         ylab("Total Count") +
         scale_fill_manual(values=c("green3", "red3"), name="Mushroom Class") 
 
-# 8. Explore odorless mushrooms.
+# 9. Explore odorless mushrooms.
 odorless <- mushroom[mushroom$odor == "None", ]
 
 mushroomWithNoOdor <- ggplot(odorless, aes(x = cap.shape, fill = class)) + 
