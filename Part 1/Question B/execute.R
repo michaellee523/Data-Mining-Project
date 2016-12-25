@@ -10,6 +10,24 @@ savePlot <- function(myPlot, name="untitled.png") {
 
 mushroom <- read.csv("mushrooms.csv", header = TRUE, na.strings = "?")
 
+bellEdibleCount <- sum(mushroom$class == "e" & mushroom$cap.shape == "b")
+bellNotEdibleCount <- sum(mushroom$class == "p" & mushroom$cap.shape == "b")
+bellTotalCount <- bellEdibleCount + bellNotEdibleCount
+
+#get percentage of bell shaped edible mushroom
+print(bellEdibleCount/bellTotalCount)
+#get percentage of bell shaped poisonous mushroom
+print(bellNotEdibleCount/bellTotalCount)
+
+knobEdibleCount <- sum(mushroom$class == "e" & mushroom$cap.shape == "k")
+knobNotEdibleCount <- sum(mushroom$class == "p" & mushroom$cap.shape == "k")
+knobTotalCount <- knobEdibleCount + knobNotEdibleCount
+
+#get percentage of knob shaped edible mushroom
+print(knobEdibleCount/knobTotalCount)
+#get percentage of knob shaped poisonous mushroom
+print(knobNotEdibleCount/knobTotalCount)
+
 mushroom$class <- factor(mushroom$class, levels = c("e", "p"), labels = c("Edible", "Poisonous"))
 mushroom$cap.shape <- factor(mushroom$cap.shape, levels = c("b", "c", "f", "k", "s", "x"), labels = c("Bell", "Conical", "Flat", "Knobbed", "Sunken", "Convex"))
 mushroom$bruises <- factor(mushroom$bruises, levels = c("f", "t"), labels = c("No bruises", "Bruises"))
