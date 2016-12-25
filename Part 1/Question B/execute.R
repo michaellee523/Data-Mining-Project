@@ -120,34 +120,20 @@ odorPlot <- ggplot(mushroom, aes(x = odor, fill = class)) +
         ylab("Total Count") +
         scale_fill_manual(values=c("green3", "red3"), name="Mushroom Class") 
 
-<<<<<<< HEAD
-# Exploring odorless mushrooms.
-odorless <- mushroom[mushroom$odor == "None", ]
-odorlessSepColorByBruisesAndHabitat <- ggplot(odorless, aes(x = cap.color, fill = class)) + 
-=======
 # 9. Explore odorless mushrooms.
 odorless <- mushroom[mushroom$odor == "None", ]
 
 mushroomWithNoOdor <- ggplot(odorless, aes(x = cap.shape, fill = class)) + 
->>>>>>> origin/organizing
         geom_bar(width = 0.5) +
         facet_wrap(~habitat + bruises) +
         xlab("Cap Color") + 
         ylab("Total Count") +
-<<<<<<< HEAD
-        ggtitle("Odorless Mushrooms separated by Cap Color grouped by Bruises and Habitat") +
-=======
         ggtitle("Odorless Mushrooms") +
->>>>>>> origin/organizing
         scale_fill_manual(values = c("green3", "red3")) +
         theme(axis.text.x = element_text(angle = 90, hjust = 1))
 
 
-<<<<<<< HEAD
-#output the plots
-=======
 # Save the plots.
->>>>>>> origin/organizing
 savePlot(capShapePlot, "cap shape.png")
 savePlot(bruisesPlot, "bruise.png")
 savePlot(capPlot, "cap.png")
